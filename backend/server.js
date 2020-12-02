@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
     res.send('server is ready');
 });
 app.get('/api/products', (req, res) => {
-    console.log(data);
+    // console.log(data);
     res.send(data.products);
 });
 const port = process.env.PORT || 5000;
