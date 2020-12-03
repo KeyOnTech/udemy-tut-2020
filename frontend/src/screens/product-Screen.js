@@ -18,10 +18,6 @@ function ProductScreen(props) {
     useEffect(() => {
         dispatch(detailsProduct(productId));
     }, [dispatch, productId])
-
-    console.log('33-33');
-    console.log(product);
-
     return (
         <div>
             {loading? (
