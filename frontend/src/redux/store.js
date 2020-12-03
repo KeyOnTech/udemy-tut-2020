@@ -1,13 +1,14 @@
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import thunk from 'redux-thunk';
-import { productsListReducer } from './reducers/products-reducer';
-                                        // TEST - delete me
+import { productDetailsReducer, productsListReducer } from './reducers/products-reducer';
+                                        /*** TEST - delete me */
                                         // import data from '../data';
 const initialState = {};
 const reducer = combineReducers({
     productsList: productsListReducer,
+    productDetails: productDetailsReducer,
 })
-                                        // TEST - delete me
+                                        /*** TEST - delete me */
                                         // const reducer = (state, action) => {
                                         //     return {products: data.products};
                                         // }

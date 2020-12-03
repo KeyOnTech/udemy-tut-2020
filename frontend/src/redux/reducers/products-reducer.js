@@ -1,12 +1,12 @@
-import {PRODUCT_LIST_FAIL, PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS} from '../../constants/products-Constants';
+import {PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_LIST_FAIL, PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS} from '../../constants/product-Constants';
+
 const initialState = {
+    error: {},
     loading: true,
     products: [],
-    error: {},
-                        // title: 'Save Sensor 1',
-                        // dataList: [],
-                        // errors: [],
+    product: {},
 };
+
 export const productsListReducer = (state = initialState, action) => {
     switch(action.type) {
         case PRODUCT_LIST_REQUEST:
@@ -15,6 +15,19 @@ export const productsListReducer = (state = initialState, action) => {
             return {loading: false, error: action.payload};
         case PRODUCT_LIST_SUCCESS:
             return {loading: false, products: action.payload};
+        default:
+            return state;
+    }
+}
+
+export const productDetailsReducer = (state = initialState, action) => {
+    switch(action.type) {
+        case PRODUCT_DETAILS_REQUEST:
+            return {loading: true};
+        case PRODUCT_DETAILS_FAIL:
+            return {loading: false, error: action.payload};
+        case PRODUCT_DETAILS_SUCCESS:
+            return {loading: false, product: action.payload};
         default:
             return state;
     }

@@ -1,7 +1,9 @@
                                                   // import React, { useEffect, useState } from 'react';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+/*** this is the old container --- start */
 import {listProducts} from '../actions/product-Actions';
+/*** this is the old container --- end */
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Product from '../components/Product';
@@ -24,12 +26,18 @@ function HomeScreen() {
                                                   //   fetchData();
                                                   // }, [])
 
+    /*** this is the old container --- start */
     const dispatch = useDispatch();
     const productsList = useSelector((state) => state.productsList);
     const {loading, error, products} = productsList;
+    /*** this is the old container --- end */
+
+    /*** this is the old componentDidMount - aka onLoad - you can have multiple useEffects --- start */
     useEffect(() => {
       dispatch(listProducts());
     }, [dispatch]);
+    /*** this is the old componentDidMount - aka onLoad - you can have multiple useEffects --- end */
+
     return (
       <div>
         {loading? (

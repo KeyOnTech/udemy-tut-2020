@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
-import HomeScreen from './screens/HomeScreen';
-import ProductScreen from './screens/ProductScreen';
+import HomeScreen from './screens/home-Screen';
+import ProductScreen from './screens/product-Screen';
 function App() {
   return (
     <BrowserRouter>
