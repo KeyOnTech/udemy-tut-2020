@@ -2,6 +2,10 @@ const express = require('express');
 const {data} = require('./data');
 // Create Express app
 const app = express()
+/*** this lets you call this REST server service --- START */
+var cors = require('cors');
+app.use( cors() );
+/*** this lets you call this REST server service --- END */
 // default route
 app.get('/', (req, res) => {
     res.send('server is ready');
